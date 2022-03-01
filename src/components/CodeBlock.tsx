@@ -20,7 +20,7 @@ export default function CodeBlock({
   }, [code, language]);
 
   return (
-    <chakra.pre {...props}>
+    <chakra.pre {...props} minW={`80vw`} rounded={`xl`} shadow={`sm`}>
       <Code className={`language-${language}`}>{parseCode(code)}</Code>
     </chakra.pre>
   );

@@ -1,5 +1,13 @@
 import CodeBlock from '@/components/CodeBlock';
-import { Box, Button, HStack } from '@chakra-ui/react';
+import {
+  Text,
+  Button,
+  Center,
+  Heading,
+  HStack,
+  VStack,
+  Divider,
+} from '@chakra-ui/react';
 import type { NextPage } from 'next';
 import { useState } from 'react';
 
@@ -25,13 +33,27 @@ const Home: NextPage = () => {
   };
 
   return (
-    <Box>
-      <HStack>
-        <Button onClick={parseClipboardAsJSON}>JSON/JS</Button>
-        <Button onClick={parseClipboardAsXML}>XML</Button>
+    <VStack flexDirection={`column`} spacing={4}>
+      <Heading fontWeight={`thin`} fontSize={22}>
+        FORMATAR
+        <Divider />
+      </Heading>
+      <HStack w={64}>
+        <Button w={`full`} colorScheme={`brand`} onClick={parseClipboardAsJSON}>
+          JSON
+        </Button>
+        <Button w={`full`} colorScheme={`brand`} onClick={parseClipboardAsXML}>
+          XML
+        </Button>
       </HStack>
-      <CodeBlock code={currentText} language={currentLanguage} />
-    </Box>
+      {currentText !== `{}` && (
+        <>
+          <Divider />
+          <Text>Código formatado:</Text>
+          <CodeBlock code={currentText} language={currentLanguage} />
+        </>
+      )}
+    </VStack>
   );
 };
 

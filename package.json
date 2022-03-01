@@ -17,7 +17,7 @@
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
     "@fontsource/fira-code": "^4.5.5",
-    "@fontsource/rubik": "^4.5.3",
+    "@fontsource/inter": "^4.5.4",
     "framer-motion": "^6.2.6",
     "next": "12.1.0",
     "prismjs": "^1.27.0",
